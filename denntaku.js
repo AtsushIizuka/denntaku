@@ -42,11 +42,15 @@ let commaID = 0;
 
 AC.addEventListener("click",function(){
     displayElement.innerHTML = 0;
+    plus.disabled = false
+  minus.disabled = false
+  multiplication.disabled = false
+  division.disabled = false
 })
 
 seven.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=7;
+       displayElement.innerHTML=""+displayElement.innerHTML+7;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -60,7 +64,7 @@ seven.addEventListener("click", function () {
 
 eight.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=8;
+        displayElement.innerHTML=""+displayElement.innerHTML+8;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -74,11 +78,12 @@ eight.addEventListener("click", function () {
 
 nine.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=9;
+        displayElement.innerHTML=""+displayElement.innerHTML+9;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0"){
   displayElement.innerHTML = 9;
+  
  
     }else{
         displayElement.innerHTML = "" + displayElement.innerHTML + 9;
@@ -88,7 +93,7 @@ nine.addEventListener("click", function () {
 
 four.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=4;
+        displayElement.innerHTML=""+displayElement.innerHTML+4;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -102,7 +107,7 @@ four.addEventListener("click", function () {
 
 five.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=5;
+       displayElement.innerHTML=""+displayElement.innerHTML+5;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -116,7 +121,7 @@ five.addEventListener("click", function () {
 
 six.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=6;
+        displayElement.innerHTML=""+displayElement.innerHTML+5;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -130,7 +135,7 @@ six.addEventListener("click", function () {
 
 one.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=1;
+        displayElement.innerHTML=""+displayElement.innerHTML+1;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -159,7 +164,7 @@ two.addEventListener("click", function () {
 
 three.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=3;
+        displayElement.innerHTML=""+displayElement.innerHTML+3;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -173,7 +178,7 @@ three.addEventListener("click", function () {
 
 zero.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=0;
+        displayElement.innerHTML=""+displayElement.innerHTML+0;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -187,7 +192,7 @@ zero.addEventListener("click", function () {
 
 zerozero.addEventListener("click", function () {
     if(equalID == 1){
-        displayElement.innerHTML=0;
+        displayElement.innerHTML=""+displayElement.innerHTML+0;
         equalID = 0;
     } else{
         if(displayElement.innerHTML ==="0" ){
@@ -213,6 +218,9 @@ comma.addEventListener("click", function () {
 
 plus.addEventListener("click", function () {
     commaID = 0;
+    minus.disabled = true
+    multiplication.disabled = true
+    division.disabled = true
   let Str = String(displayElement.innerHTML);
   if (Str.match(/＋/)) {;
   } else {
@@ -222,6 +230,9 @@ plus.addEventListener("click", function () {
 
 minus.addEventListener("click", function () {
     commaID = 0;
+    plus.disabled = true
+    multiplication.disabled = true
+    division.disabled = true
   let Str = String(displayElement.innerHTML);
   if (Str.match(/-/)) {;
   } else {
@@ -231,6 +242,9 @@ minus.addEventListener("click", function () {
 
 multiplication.addEventListener("click", function () {
     commaID = 0;
+    plus.disabled = true
+    minus.disabled = true
+    division.disabled = true
   let Str = String(displayElement.innerHTML);
   if (Str.match(/＊/)) {;
   } else {
@@ -240,6 +254,9 @@ multiplication.addEventListener("click", function () {
 
 division.addEventListener("click", function () {
     commaID = 0;
+    plus.disabled = true
+    minus.disabled = true
+    multiplication.disabled = true
   let Str = String(displayElement.innerHTML);
   if (Str.match(/／/)) {;
   } else {
@@ -252,6 +269,10 @@ equal.addEventListener("click", function () {
   let Str = String(displayElement.innerHTML);
   equalID=1;
   commaID=0;
+  plus.disabled = false
+  minus.disabled = false
+  multiplication.disabled = false
+  division.disabled = false
 
   
   if (Str.match(/＋/)) {
@@ -262,6 +283,12 @@ equal.addEventListener("click", function () {
     cut1 = Number(cut1);
     cut2 = Number(cut2);
     displayElement.innerHTML = cut1 + cut2;
+    
+    
+
+    
+    
+    
   
   } else if (Str.match(/-/)) {
     let cut1 = displayElement.innerHTML.substr(0, displayElement.innerHTML.indexOf('-'));
@@ -271,6 +298,8 @@ equal.addEventListener("click", function () {
     cut1 = Number(cut1);
     cut2 = Number(cut2);
     displayElement.innerHTML = (cut1 - cut2).toFixed(12) ;
+    
+    
   } else if (Str.match(/／/)) {
   let cut3 = displayElement.innerHTML.substr(0, displayElement.innerHTML.indexOf('／'));
   console.log(cut3);
@@ -279,6 +308,7 @@ equal.addEventListener("click", function () {
   cut3 = Number(cut3);
   cut4 = Number(cut4);
   displayElement.innerHTML = ( cut3/cut4).toFixed( 12 ); 
+  console.log(displayElement);
 
  
   }else if (Str.match(/＊/)) {
