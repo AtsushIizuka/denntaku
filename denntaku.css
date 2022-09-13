@@ -1,0 +1,16 @@
+#display{
+    text-align:right;
+    margin-right: 83%;
+    font-size: 21px;
+}
+
+.button1{
+      padding: 3px;
+    width: 4%;
+    cursor: pointer;
+}
+.button3{
+      padding: 3px;
+    width: 8.4%;
+    cursor: pointer;
+}
