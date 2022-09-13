@@ -285,7 +285,7 @@ equal.addEventListener("click", function () {
   let cut1 = displayElement.innerHTML.substr(0, displayElement.innerHTML.indexOf('＊'));
   console.log(cut1);
   let cut2 = displayElement.innerHTML.substr(displayElement.innerHTML.indexOf('＊') + 1);
-  //console.log(cut2);
+ 
   cut1 = Number(cut1);
   cut2 = Number(cut2);
   displayElement.innerHTML = (cut1 * cut2).toFixed(12);
