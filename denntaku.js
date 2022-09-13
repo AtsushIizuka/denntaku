@@ -297,7 +297,11 @@ equal.addEventListener("click", function () {
     console.log(cut2);
     cut1 = Number(cut1);
     cut2 = Number(cut2);
-    displayElement.innerHTML = (cut1 - cut2).toFixed(12) ;
+    let answer = (cut1 - cut2).toFixed(12);
+     answer = Math.round(answer * 10); 
+　   answer = answer / 10;   
+   　displayElement.innerHTML = answer
+      
     
     
   } else if (Str.match(/／/)) {
@@ -307,9 +311,11 @@ equal.addEventListener("click", function () {
   console.log(cut4);
   cut3 = Number(cut3);
   cut4 = Number(cut4);
-  displayElement.innerHTML = ( cut3/cut4).toFixed( 12 ); 
-  console.log(displayElement);
-
+  let answer = (cut3 / cut4).toFixed(12);
+   answer = Math.round(answer * 10); 
+　 answer = answer / 10;   
+　 displayElement.innerHTML = answer
+      
  
   }else if (Str.match(/＊/)) {
   let cut1 = displayElement.innerHTML.substr(0, displayElement.innerHTML.indexOf('＊'));
@@ -318,7 +324,10 @@ equal.addEventListener("click", function () {
  
   cut1 = Number(cut1);
   cut2 = Number(cut2);
-  displayElement.innerHTML = (cut1 * cut2).toFixed(12);
+  let answer = (cut1 * cut2).toFixed(12);
+   answer = Math.round(answer * 10); 
+　 answer = answer / 10;   
+　 displayElement.innerHTML = answer
       
   }}
 )
